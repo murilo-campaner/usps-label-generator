@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import client from '@/lib/easypost';
+import getEasyPostClient from '@/lib/easypost';
 import { addressSchema } from '@/lib/validations';
 
 export async function POST(request: NextRequest) {
@@ -18,6 +18,7 @@ export async function POST(request: NextRequest) {
     const addressData = validationResult.data;
 
     // Create address in EasyPost with verification
+    const client = getEasyPostClient();
     const address = await client.Address.create({
       street1: addressData.street1,
       street2: addressData.street2,
@@ -44,7 +45,8 @@ export async function POST(request: NextRequest) {
       });
     } else {
       // Invalid address
-      const errors = address.verifications?.delivery?.errors?.map(err => err.message) || [];
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const errors = address.verifications?.delivery?.errors?.map((err: any) => err.message) || [];
       return NextResponse.json({
         isValid: false,
         errors: errors.length > 0 ? errors : ['Address could not be verified'],
@@ -52,7 +54,7 @@ export async function POST(request: NextRequest) {
       }, { status: 400 });
     }
 
-  } catch (error) {
+  } catch (error: unknown) {
     console.error('Error in address verification:', error);
 
     if (error instanceof Error) {

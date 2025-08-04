@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import client from '@/lib/easypost';
+import getEasyPostClient from '@/lib/easypost';
 import { shippingFormSchema } from '@/lib/validations';
 
 export async function POST(request: NextRequest) {
@@ -24,6 +24,9 @@ export async function POST(request: NextRequest) {
     }
 
     const { fromAddress, toAddress, package: packageData } = validationResult.data;
+
+    // Get EasyPost client
+    const client = getEasyPostClient();
 
     // Create addresses first
     const fromAddressObj = await client.Address.create({
@@ -60,7 +63,8 @@ export async function POST(request: NextRequest) {
     });
 
     // Find the best USPS rate
-    const uspsRates = shipment.rates?.filter(rate =>
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const uspsRates = shipment.rates?.filter((rate: any) =>
       rate.carrier.toLowerCase().includes('usps')
     ) || [];
 
@@ -72,7 +76,8 @@ export async function POST(request: NextRequest) {
     }
 
     // Select the cheapest rate (or the first available)
-    const selectedRate = uspsRates.reduce((cheapest, current) =>
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const selectedRate = uspsRates.reduce((cheapest: any, current: any) =>
       current.rate < cheapest.rate ? current : cheapest
     );
 
