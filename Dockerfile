@@ -23,5 +23,15 @@ EXPOSE 3000
 ENV NODE_ENV=production
 ENV PORT=3000
 
-# Start the application
-CMD ["npm", "start"]
+# Create a startup script to debug environment variables
+RUN echo '#!/bin/sh' > /app/start.sh && \
+    echo 'echo "Starting application..."' >> /app/start.sh && \
+    echo 'echo "NODE_ENV: $NODE_ENV"' >> /app/start.sh && \
+    echo 'echo "PORT: $PORT"' >> /app/start.sh && \
+    echo 'echo "EASYPOST_API_KEY exists: $([ -n "$EASYPOST_API_KEY" ] && echo "YES" || echo "NO")"' >> /app/start.sh && \
+    echo 'echo "EASYPOST_API_KEY length: ${#EASYPOST_API_KEY}"' >> /app/start.sh && \
+    echo 'npm start' >> /app/start.sh && \
+    chmod +x /app/start.sh
+
+# Start the application with debug info
+CMD ["/app/start.sh"]
