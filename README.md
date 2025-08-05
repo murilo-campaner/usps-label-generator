@@ -1,7 +1,7 @@
-# ✈️ USPS Label Generator – Ship like a Pro, Code like a Senior
+📦 Ship smarter: a real-world USPS label flow in 4 hours (TS + Next 15 + EasyPost)
 
 > 100 % TypeScript • Next.js 15 • API-first • Pixel–perfect Tailwind UI
-> **Built end-to-end in < 1 day – imagine what I deliver in a week.**
+> **Built end-to-end in < 4 hours.**
 
 ## 🚀 **Live Demo**
 
