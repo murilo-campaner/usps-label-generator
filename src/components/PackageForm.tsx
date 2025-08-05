@@ -16,12 +16,6 @@ export default function PackageForm({ onSubmit, isLoading = false }: PackageForm
     formState: { errors },
   } = useForm<PackageData>({
     resolver: zodResolver(packageSchema),
-    defaultValues: {
-      weight: 16.0,
-      length: 8.0,
-      width: 6.0,
-      height: 1.0,
-    },
   });
 
   return (
@@ -74,7 +68,7 @@ export default function PackageForm({ onSubmit, isLoading = false }: PackageForm
                     step="0.1"
                     min="0"
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="12.0"
+                    placeholder="8.0"
                     onChange={(e) => field.onChange(parseFloat(e.target.value) || 0)}
                   />
                   {errors.length && (
@@ -100,7 +94,7 @@ export default function PackageForm({ onSubmit, isLoading = false }: PackageForm
                     step="0.1"
                     min="0"
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="8.0"
+                    placeholder="6.0"
                     onChange={(e) => field.onChange(parseFloat(e.target.value) || 0)}
                   />
                   {errors.width && (
@@ -126,7 +120,7 @@ export default function PackageForm({ onSubmit, isLoading = false }: PackageForm
                     step="0.1"
                     min="0"
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="6.0"
+                    placeholder="1.0"
                     onChange={(e) => field.onChange(parseFloat(e.target.value) || 0)}
                   />
                   {errors.height && (

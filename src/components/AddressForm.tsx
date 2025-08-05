@@ -17,24 +17,6 @@ export default function AddressForm({ onSubmit, isLoading = false }: AddressForm
     formState: { errors },
   } = useForm<AddressFormData>({
     resolver: zodResolver(addressFormSchema),
-    defaultValues: {
-      fromAddress: {
-        street1: '350 5th Avenue',
-        street2: 'Suite 1000',
-        city: 'New York',
-        state: 'NY',
-        zip: '10118',
-        country: 'US',
-      },
-      toAddress: {
-        street1: '1600 Pennsylvania Avenue NW',
-        street2: 'Apt 200',
-        city: 'Washington',
-        state: 'DC',
-        zip: '20500',
-        country: 'US',
-      },
-    },
   });
 
   const handleFormSubmit = (data: AddressFormData) => {
@@ -60,7 +42,7 @@ export default function AddressForm({ onSubmit, isLoading = false }: AddressForm
                     {...field}
                     type="text"
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="123 Main St"
+                    placeholder="350 5th Avenue"
                   />
                   {errors.fromAddress?.street1 && (
                     <p className="text-red-500 text-sm mt-1">{errors.fromAddress.street1.message}</p>
@@ -83,7 +65,7 @@ export default function AddressForm({ onSubmit, isLoading = false }: AddressForm
                     {...field}
                     type="text"
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Apt 4B"
+                    placeholder="Suite 1000"
                   />
                 </div>
               )}
@@ -154,7 +136,7 @@ export default function AddressForm({ onSubmit, isLoading = false }: AddressForm
                     {...field}
                     type="text"
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="12345"
+                    placeholder="10118"
                   />
                   {errors.fromAddress?.zip && (
                     <p className="text-red-500 text-sm mt-1">{errors.fromAddress.zip.message}</p>
@@ -183,7 +165,7 @@ export default function AddressForm({ onSubmit, isLoading = false }: AddressForm
                     {...field}
                     type="text"
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="456 Oak Ave"
+                    placeholder="1600 Pennsylvania Avenue NW"
                   />
                   {errors.toAddress?.street1 && (
                     <p className="text-red-500 text-sm mt-1">{errors.toAddress.street1.message}</p>
@@ -206,7 +188,7 @@ export default function AddressForm({ onSubmit, isLoading = false }: AddressForm
                     {...field}
                     type="text"
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Suite 100"
+                    placeholder="Apt 200"
                   />
                 </div>
               )}
@@ -226,7 +208,7 @@ export default function AddressForm({ onSubmit, isLoading = false }: AddressForm
                     {...field}
                     type="text"
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Los Angeles"
+                    placeholder="Washington"
                   />
                   {errors.toAddress?.city && (
                     <p className="text-red-500 text-sm mt-1">{errors.toAddress.city.message}</p>
@@ -277,7 +259,7 @@ export default function AddressForm({ onSubmit, isLoading = false }: AddressForm
                     {...field}
                     type="text"
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="90210"
+                    placeholder="20500"
                   />
                   {errors.toAddress?.zip && (
                     <p className="text-red-500 text-sm mt-1">{errors.toAddress.zip.message}</p>
