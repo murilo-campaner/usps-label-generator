@@ -14,7 +14,7 @@
 
 ## Why this project matters
 
-Recruiters read dozens of “todo-list” demos. I wanted something real:
+Recruiters read dozens of "todo-list" demos. I wanted something real:
 
 * 🤖 **Full-stack** – From responsive React forms to serverless API Routes.
 * 📦 **3rd-party integration** – EasyPost SDK for address verification, rate shopping and label purchase.
@@ -62,7 +62,20 @@ The result? A shippable mini-product that could slot into Shopify tomorrow.
 2. **API integration** – Comfortable reading docs, handling webhooks, auth, etc.
 3. **Product thinking** – UX details (pre-fill, spinner states, success toasts) matter.
 4. **Code hygiene** – Lint-clean, constants extracted, no magic numbers, scalable structure.
-5. **Communication** – Clear commits, self-explanatory README (you’re reading it!).
+5. **Communication** – Clear commits, self-explanatory README (you're reading it!).
+6. **DevOps ready** – Docker containerization, Railway deployment, environment management.
+
+---
+
+## 🚀 **Production Deployment**
+
+This project demonstrates **real-world deployment skills**:
+
+* **Docker containerization** – Multi-stage build, optimized for production
+* **Railway deployment** – CI/CD pipeline, automatic deployments on push
+* **Environment management** – Secure API keys, production-ready configs
+* **Domain & SSL** – Custom subdomain with HTTPS encryption
+* **Monitoring** – Built-in logging and error tracking
 
 ---
 
@@ -76,5 +89,5 @@ The result? A shippable mini-product that could slot into Shopify tomorrow.
 
 ## Hiring me means …
 
-You get a developer who ships fast, sweats the details and **turns specs into polished products**.  Let’s talk.
+You get a developer who ships fast, sweats the details and **turns specs into polished products**.  Let's talk.
 **contato@campaner.dev**
