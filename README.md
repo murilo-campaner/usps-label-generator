@@ -3,6 +3,15 @@
 > 100 % TypeScript • Next.js 15 • API-first • Pixel–perfect Tailwind UI
 > **Built end-to-end in < 1 day – imagine what I deliver in a week.**
 
+## 🚀 **Live Demo**
+
+**[👉 Try it now: https://usps-label-generator-production.up.railway.app/](https://usps-label-generator-production.up.railway.app/)**
+
+* **No setup required** – Just click and start shipping
+* **Real USPS integration** – Address verification & label generation
+* **Complete workflow** – From form to printed label in 2 minutes
+* **Mobile responsive** – Works perfectly on any device
+
 ## Why this project matters
 
 Recruiters read dozens of “todo-list” demos. I wanted something real:
