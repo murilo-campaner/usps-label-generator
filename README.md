@@ -30,7 +30,7 @@ The result? A shippable mini-product that could slot into Shopify tomorrow.
 
 | Step | What you see | Tech highlight |
 |------|--------------|----------------|
-| 1. Addresses | Two address forms | React-Hook-Form + Zod |
+| 1. Addresses | Two smart forms with pre-filled demo data | React-Hook-Form + Zod |
 | 2. Validation | Real-time USPS address verification | EasyPost API \(server-side\) |
 | 3. Package | Weight & dimensions with live rules | Zod schema w/ limits |
 | 4. Label | Instant PNG/PDF preview, download & 1-click print | Secure blob download & custom print window |
